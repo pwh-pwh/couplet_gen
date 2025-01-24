@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 ab_glyph = "0.2.29"
-async-openai = "0.27.2"
 image = "0.25.5"
 imageproc = "0.25.0"
+serde_json = "1.0.137"
+ureq = { version = "2.12.1", features = ["json"] }
