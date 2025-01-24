@@ -1,4 +1,5 @@
 mod image_gen;
+mod gpt_client;
 
 use crate::image_gen::{gen_couplet, Couplet};
 use ab_glyph::Font;
