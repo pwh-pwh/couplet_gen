@@ -6,11 +6,13 @@ use ab_glyph::Font;
 use image::Pixel;
 use imageproc::definitions::Clamp;
 use imageproc::drawing::Canvas;
+use crate::gpt_client::gen_couplet_by_gpt;
 
 fn main() {
+    let couplet = gen_couplet_by_gpt("发财");
     gen_couplet(&Couplet::new(
-        "Rust无敌".to_string(),
-        "并发性能铸匠魂".to_string(),
-        "安全高效为本心".to_string(),
+        couplet.title,
+        couplet.top,
+        couplet.bottom,
     ));
 }

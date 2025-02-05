@@ -3,6 +3,7 @@ use image::{ImageReader, Pixel, Rgba};
 use imageproc::definitions::Clamp;
 use imageproc::drawing::{draw_text_mut, text_size, Canvas};
 
+#[derive(Debug)]
 pub struct Couplet {
     pub title: String,
     pub top: String,
