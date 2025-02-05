@@ -1,12 +1,5 @@
-mod image_gen;
-mod gpt_client;
-
-use crate::image_gen::{gen_couplet, Couplet};
-use ab_glyph::Font;
-use image::Pixel;
-use imageproc::definitions::Clamp;
-use imageproc::drawing::Canvas;
-use crate::gpt_client::gen_couplet_by_gpt;
+use couplet_gen::gpt_client::gen_couplet_by_gpt;
+use couplet_gen::image_gen::{gen_couplet, Couplet};
 
 fn main() {
     let couplet = gen_couplet_by_gpt("发财");
