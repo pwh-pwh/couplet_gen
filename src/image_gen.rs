@@ -1,5 +1,6 @@
 use ab_glyph::{Font, FontRef, PxScale};
-use image::{ImageBuffer, ImageReader, Pixel, Rgba, RgbaImage};
+use chrono::Local;
+use image::{Pixel, Rgba};
 use imageproc::definitions::Clamp;
 use imageproc::drawing::{draw_text_mut, text_size, Canvas};
 
@@ -16,7 +17,7 @@ impl Couplet {
     }
 }
 
-pub fn gen_couplet(couplet: &Couplet) {
+pub fn gen_couplet(couplet: &Couplet) -> String {
     let image_data = include_bytes!("../r1.png");
     let mut image = image::load_from_memory(image_data).unwrap().to_rgba8();
 /*    let mut image = ImageReader::open("r1.png")
@@ -63,7 +64,11 @@ pub fn gen_couplet(couplet: &Couplet) {
     );
     let (w, h) = text_size(scale, &font, text);
     println!("Text size: {}x{}", w, h);
-    image.save("result.png").unwrap();
+    // 获取当前时间并格式化为字符串
+    let current_time = Local::now().format("%Y%m%d_%H%M%S").to_string();
+    let file_name = format!("result{}.png",current_time);
+    image.save(&file_name).unwrap();
+    file_name
 }
 pub fn draw_text_mut_vertical<C>(
     canvas: &mut C,
