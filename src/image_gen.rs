@@ -1,5 +1,5 @@
 use ab_glyph::{Font, FontRef, PxScale};
-use image::{ImageReader, Pixel, Rgba};
+use image::{ImageBuffer, ImageReader, Pixel, Rgba, RgbaImage};
 use imageproc::definitions::Clamp;
 use imageproc::drawing::{draw_text_mut, text_size, Canvas};
 
@@ -17,11 +17,13 @@ impl Couplet {
 }
 
 pub fn gen_couplet(couplet: &Couplet) {
-    let mut image = ImageReader::open("r1.png")
+    let image_data = include_bytes!("../r1.png");
+    let mut image = image::load_from_memory(image_data).unwrap().to_rgba8();
+/*    let mut image = ImageReader::open("r1.png")
         .unwrap()
         .decode()
         .unwrap()
-        .to_rgba8();
+        .to_rgba8();*/
 
     // 使用 imageproc 填充整个图像为白色
     // let white = Rgb([255, 255, 255]);
