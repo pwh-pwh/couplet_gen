@@ -37,7 +37,7 @@ pub fn gen_couplet(couplet: &Couplet) -> String {
     let text = "Rust无敌";
     draw_text_mut(
         &mut image,
-        Rgba([0u8, 0u8, 0u8, 200u8]),
+        Rgba([0u8, 0u8, 0u8, 255u8]),
         200,
         85,
         scale,
@@ -46,7 +46,7 @@ pub fn gen_couplet(couplet: &Couplet) -> String {
     );
     draw_text_mut_vertical(
         &mut image,
-        Rgba([0u8, 0u8, 0u8, 200u8]),
+        Rgba([0u8, 0u8, 0u8, 255u8]),
         90,
         300,
         scale,
@@ -55,7 +55,7 @@ pub fn gen_couplet(couplet: &Couplet) -> String {
     );
     draw_text_mut_vertical(
         &mut image,
-        Rgba([0u8, 0u8, 0u8, 200u8]),
+        Rgba([0u8, 0u8, 0u8, 255u8]),
         535,
         300,
         scale,
