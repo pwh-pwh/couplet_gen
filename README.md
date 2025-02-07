@@ -2,4 +2,6 @@
 
 use rust to generate couplet
 
-## todo...
+## visualization
+
+![image](img/img.png)
