@@ -1,11 +1,7 @@
-use std::fs::File;
-use std::io::Read;
-use std::process::Command;
-use iced::widget::{button, text_input, Column, Container, Image};
-use iced::{application, Element, Fill, Font, Task, Theme};
-use iced::widget::image::Handle;
+#![windows_subsystem = "windows"]
 use couplet_gen::{gen_couplet, gen_couplet_by_gpt, Couplet};
-
+use iced::widget::{button, text_input, Column, Container, Image};
+use iced::{application, Element, Fill, Font, Task};
 fn main() -> iced::Result {
     /*let couplet = gen_couplet_by_gpt("发财");
     gen_couplet(&Couplet::new(

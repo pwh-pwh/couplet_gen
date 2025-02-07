@@ -11,7 +11,3 @@ image = "0.25.5"
 imageproc = "0.25.0"
 serde_json = "1.0.137"
 ureq = { version = "2.12.1", features = ["json"] }
-
-[profile.release]
-# 设置为 'windows'，将 GUI 应用标记为没有控制台窗口
-windows-subsystem = "windows"
